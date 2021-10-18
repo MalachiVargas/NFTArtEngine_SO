@@ -3,22 +3,24 @@
 const path = require("path");
 const isLocal = typeof process.pkg === "undefined";
 const basePath = isLocal ? process.cwd() : path.dirname(process.execPath);
-const { MODE } = require(path.join(basePath, "src/blendMode.js"));
+const { MODE } = require(path.join(basePath, "/src/blendMode.js"));
+const indexName = "SpacedOut"
 const description =
-  "This is the description of your NFT project, remember to replace this";
+  "The SpacedOut collection consists of 10000 generated astronauts crafted with love from over 210+ digitally hand drawn assets. It lives as one of the first NFTs stored on the blockchain in the Moonbeam Ecosystem.";
 const baseUri = "ipfs://NewUriToReplace";
 
 const layerConfigurations = [
   {
-    growEditionSizeTo: 10,
+    growEditionSizeTo: 10000,
     layersOrder: [
       { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Aura" },
+      { name: "Outfit" },
+      { name: "Patch" },
+      { name: "Accessory" },
+      { name: "Visor" },
+      { name: "Jewelry" },
+      { name: "Bubble" },
     ],
   },
 ];
@@ -51,6 +53,7 @@ const preview = {
 };
 
 module.exports = {
+  indexName,
   format,
   baseUri,
   description,
